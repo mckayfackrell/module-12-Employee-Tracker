@@ -45,12 +45,6 @@ const promptUser = () => {
           "Add a role",
           "Add an employee",
           "Update an employee role",
-          "Update an employee manager",
-          "View employees by department",
-          "Delete a department",
-          "Delete a role",
-          "Delete an employee",
-          "View department budgets",
           "No Action",
         ],
       },
@@ -86,32 +80,19 @@ const promptUser = () => {
         updateEmployee();
       }
 
-      if (choices === "Update an employee manager") {
-        updateManager();
-      }
-
-      if (choices === "View employees by department") {
-        employeeDepartment();
-      }
-
-      if (choices === "Delete a department") {
-        deleteDepartment();
-      }
-
-      if (choices === "Delete a role") {
-        deleteRole();
-      }
-
-      if (choices === "Delete an employee") {
-        deleteEmployee();
-      }
-
-      if (choices === "View department budgets") {
-        viewBudget();
-      }
-
       if (choices === "No Action") {
         connection.end();
       }
     });
+};
+
+showDepartments = () => {
+  console.log('Showing all departments...\n');
+  const sql = `SELECT department.id AS id, department.name AS department FROM department`; 
+
+  connection.promise().query(sql, (err, rows) => {
+    if (err) throw err;
+    console.table(rows);
+    promptUser();
+  });
 };
