@@ -6,6 +6,9 @@ An application called Employee Tracker which allows for a user to manage departm
 ## Video Walkthrough
 URL
 
+## Installation 
+The user should clone the repository from GitHub. This application requires Node.js, Inquirer, console.table and mysql2. To start application run `npm start`. To view database from MySQL `run mysql -u root -p`. 
+
 ## Usage
 
 When the user starts the application in the command line they are presented with the option to view all departments.
