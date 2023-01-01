@@ -10,6 +10,7 @@ require("dotenv").config();
 
 // connect to database
 const connection = mysql.createConnection({
+  
   host: "127.0.0.1", // this was changed from 'localhost' because of use with macOS
   user: "root",
   password: process.env.DB_PASSWORD,
