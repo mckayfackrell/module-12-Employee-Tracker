@@ -16,12 +16,16 @@ const connection = mysql.createConnection({
   database: "employee_db",
 });
 
+
+// throw error if connection fails, if successful log connection in console log
 connection.connect((err) => {
   if (err) throw err;
   console.log("connected as id " + connection.threadId);
   afterConnection();
 });
 
+
+// welcome message once connection is established
 afterConnection = () => {
   console.log("***********************************");
   console.log("*           WELCOME TO            *");
@@ -31,6 +35,8 @@ afterConnection = () => {
   promptUser();
 };
 
+
+// initial prompt to user from list with choices
 const promptUser = () => {
   inquirer
     .prompt([
@@ -92,6 +98,7 @@ function showDepartments() {
   console.log("Showing all departments...\n");
   const sql = `SELECT department.id AS id, department.name AS department FROM department`;
 
+  // method for executing a SQL query against the database.  If the query is successful, the function logs the returned rows to the console in the form of a table. If an error occurs, it logs the error to the console.
   connection
     .promise()
     .query(sql)
