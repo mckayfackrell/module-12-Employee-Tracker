@@ -3,11 +3,19 @@
 
 An application called Employee Tracker which allows for a user to manage departments, roles, and employees in a company. 
 
-## Video Walkthrough
-URL
+## Video Walkthrough and Screenshot
+https://drive.google.com/file/d/1XSi1eG8kmgUzjvS52JmpcGLmkivMupuL/view?usp=sharing
+
+<img width="321" alt="Screenshot 2023-01-02 at 12 14 30" src="https://user-images.githubusercontent.com/110206514/210271087-036efa82-7e72-486b-b7df-5cb4e12f57f3.png">
+
 
 ## Installation 
-The user should clone the repository from GitHub. This application requires Node.js, Inquirer, console.table and mysql2. To start application run `npm start`. To view database from MySQL `run mysql -u root -p`. 
+The user should clone the repository from GitHub. This application requires Node.js, Inquirer, console.table and mysql2. 
+
+First the packages must be installed with `npm i`
+Then launch mysql by running `run mysql -u root -p`
+The user can then populate the database with `source db/schema.sql` and `source db/seeds.sql`
+The user launches the server by runnning `node server`
 
 ## Usage
 
